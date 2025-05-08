@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="24dp">
+
+    <!-- Top Greeting + Profile Icon -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello,"
+                android:textSize="32sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Name"
+                android:textSize="50sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/ic_user_placeholder"
+            android:background="@drawable/circle_background"
+            android:padding="8dp"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_task_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar"
+        android:layout_marginTop="12dp"
+        android:text="🔔 You have 1 task due"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="#90fdfc"
+        android:padding="8dp"
+        android:textColor="#000000" />
+
+    <RelativeLayout
+        android:id="@+id/task_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_task_status"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_blue_box_questions"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✨ \n Generated Task 1"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading_animation"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/loading_spinner"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_task_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Small Description for the generated Task"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_go"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_media_next"
+            android:backgroundTint="#00FF7F"
+            android:background="@drawable/circle_small"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="4dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

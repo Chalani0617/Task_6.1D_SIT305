@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="24dp">
+
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_continue"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_task_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✨ Answered by AI"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_background"
+                android:backgroundTint="#90fdfc"
+                android:padding="8dp"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/tv_results_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Results"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="48sp"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:id="@+id/results_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/confetti_animation"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/confetti_success"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:backgroundTint="#4effb8"
+        android:layout_alignParentBottom="true"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"/>
+</RelativeLayout>
+
